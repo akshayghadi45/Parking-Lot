@@ -6,10 +6,12 @@ public class Gate {
     private Operator operator;
     private GateStatus gateStatus;
 
+
     public Gate(GateType gateType, Long gateNumber, GateStatus gateStatus) {
         this.gateType = gateType;
         this.gateNumber = gateNumber;
         this.gateStatus = gateStatus;
+
     }
 
     public GateType getGateType() {

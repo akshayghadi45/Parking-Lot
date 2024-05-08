@@ -1,5 +1,8 @@
 package Models;
 
+import Exceptions.NoParkingSlotIsEmptyException;
+import Strategies.ParkingSpotAllotmentStrategy;
+
 import java.util.List;
 
 public class ParkingLot {
@@ -7,6 +10,12 @@ public class ParkingLot {
     private List<Floor> floors;
     private List<Gate> gates;
     private ParkingLotStatus parkingLotStatus;
+    private ParkingSpotAllotmentStrategy parkingSpotAllotmentStrategy;
+
+
+    public  ParkingSlot getParkingSLot(VehicleType type) throws NoParkingSlotIsEmptyException {
+        return parkingSpotAllotmentStrategy.getParkingSlot(type,this);
+    }
 
     public Long getId() {
         return id;
@@ -40,10 +49,11 @@ public class ParkingLot {
         this.parkingLotStatus = parkingLotStatus;
     }
 
-    public ParkingLot(Long id, List<Floor> floors, List<Gate> gates, ParkingLotStatus parkingLotStatus) {
+    public ParkingLot(Long id, List<Floor> floors, List<Gate> gates, ParkingLotStatus parkingLotStatus, ParkingSpotAllotmentStrategy parkingSpotAllotmentStrategy) {
         this.id = id;
         this.floors = floors;
         this.gates = gates;
         this.parkingLotStatus = parkingLotStatus;
+        this.parkingSpotAllotmentStrategy = parkingSpotAllotmentStrategy;
     }
 }

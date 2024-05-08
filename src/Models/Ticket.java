@@ -5,19 +5,19 @@ import java.util.Date;
 import java.util.Optional;
 
 public class Ticket {
-    private Long ticketNumber;
+    private String ticketNumber;
     private LocalDateTime entryTime;
     private  Vehicle vehicle;
     private ParkingSlot parkingSlot;
     private  Gate gate;
     private Operator operator;
 
-    public Long getTicketNumber() {
+    public String getTicketNumber() {
         return ticketNumber;
     }
 
-    public void setTicketNumber(Long ticketNumber) {
-        this.ticketNumber = ticketNumber;
+    public void setTicketNumber(String ticketNumber) {
+        this.ticketNumber = String.valueOf(ticketNumber);
     }
 
     public LocalDateTime getEntryTime() {

@@ -13,6 +13,10 @@ public class VehicleRepository {
         return vehicleTable.get(vehicleNumber);
     }
 
+    public Map<String, Vehicle> getVehicleTable() {
+        return vehicleTable;
+    }
+
     public Vehicle addVehicle(String vehicleNumber, String owner, VehicleType vehicleType){
         Vehicle vehicle = new Vehicle(vehicleNumber,vehicleType,owner);
         vehicleTable.put(vehicleNumber,vehicle);

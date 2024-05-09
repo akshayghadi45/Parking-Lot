@@ -12,7 +12,11 @@ import Services.TicketService;
 public class TicketController {
     TicketService ticketService;
 
-    IssueTicketRespose issueTicket(IssueTicketRequest issueTicketRequest){
+    public TicketController(TicketService ticketService) {
+        this.ticketService = ticketService;
+    }
+
+    public IssueTicketRespose issueTicket(IssueTicketRequest issueTicketRequest){
         Ticket ticket = null;
         IssueTicketRespose issueTicketRespose = new IssueTicketRespose();
         try{
@@ -43,6 +47,6 @@ public class TicketController {
         }
 
 
-        return null;
+        return issueTicketRespose;
     }
 }

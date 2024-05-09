@@ -16,6 +16,10 @@ public class TicketRepository {
         ticketTable=ticketMap;
     }
 
+    public Map<String, Ticket> getTicketTable() {
+        return ticketTable;
+    }
+
     public Ticket createTicket(Ticket ticket){
         ticketTable.put(ticket.getTicketNumber(),ticket);
         return ticket;

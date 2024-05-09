@@ -19,6 +19,10 @@ public class GateRepository {
         }
     }
 
+    public Map<Long, Gate> getGateTable() {
+        return gateTable;
+    }
+
     public Gate setGate(Long gateId, GateType gateType, GateStatus gateStatus){
         Gate gate = new Gate(gateType,gateId,gateStatus);
         gateTable.put(gateId,gate);

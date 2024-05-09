@@ -6,9 +6,8 @@ public class Floor {
     private int floorNumber;
     private List<ParkingSlot> parkingSlotList;
 
-    public Floor(int floorNumber, List<ParkingSlot> parkingSlotList) {
+    public Floor(int floorNumber) {
         this.floorNumber = floorNumber;
-        this.parkingSlotList = parkingSlotList;
     }
 
     public int getFloorNumber() {

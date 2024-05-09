@@ -14,6 +14,11 @@ public class ParkingLotRepository {
         }
         throw new ParkingLotNotFounfException();
     }
+
+    public Map<Long, ParkingLot> getParkingLotTable() {
+        return parkingLotTable;
+    }
+
     public void setParkingLotMap(Map<Long,ParkingLot> parkingLotMap){
         parkingLotTable=parkingLotMap;
     }

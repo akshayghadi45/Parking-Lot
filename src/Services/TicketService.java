@@ -17,6 +17,14 @@ public class TicketService {
     private GateRepository gateRepository;
     private ParkingLotRepository parkingLotRepository;
     private TicketRepository ticketRepository;
+
+    public TicketService(VehicleRepository vehicleRepository, GateRepository gateRepository, ParkingLotRepository parkingLotRepository, TicketRepository ticketRepository) {
+        this.vehicleRepository = vehicleRepository;
+        this.gateRepository = gateRepository;
+        this.parkingLotRepository = parkingLotRepository;
+        this.ticketRepository = ticketRepository;
+    }
+
     public Ticket issueTicket(String vehicleNumber, VehicleType type, String owner , long gateId) throws GateNotFounfException, ParkingLotNotFounfException, NoParkingSlotIsEmptyException {
         //create an enpty ticket
         //set time
@@ -42,7 +50,9 @@ public class TicketService {
         ParkingSlot parkingSlot = parkingLot.getParkingSLot(type);
         ticket.setParkingSlot(parkingSlot);
         ticket.setTicketNumber(vehicleNumber+ UUID.randomUUID());
+        ticket.setVehicle(vehicle);
         ticketRepository.createTicket(ticket);
         return  ticket;
-            }
+
+    }
 }
